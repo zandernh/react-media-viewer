@@ -1,0 +1,109 @@
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns max on large screens */
+  gap: 16px;
+  padding: 1rem;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  .media-grid {
+    grid-template-columns: 1fr; /* Single column */
+  }
+}
+
+/* Each individual card */
+.media-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: transform 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card hover effect */
+.media-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Thumbnail container */
+.media-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+/* The thumbnail image */
+.media-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Special styling for placeholder image */
+.media-thumbnail img.placeholder {
+  object-fit: contain;
+}
+
+/* Overlay effect when hovering on the image */
+.media-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.7)
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make overlay appear on hover */
+.media-card:hover .media-overlay {
+  opacity: 1;
+}
+
+/* "Watch on YouTube" link */
+.watch-link {
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Link hover effect */
+.watch-link:hover {
+  background-color: #cc0000;
+}
+
+/* Card text info (title) */
+.media-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Title text */
+.media-info h3 {
+  font-size: 1rem;
+  color: #333;
+}

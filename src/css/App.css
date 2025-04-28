@@ -1,0 +1,44 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and overall layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.load-more-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #007336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: backgroun-color 0.3s;
+}
+
+.load-more-button:hover {
+  background-color: #005bb5;
+}
+
+.load-more-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Loading message */
+div.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #555;
+}
